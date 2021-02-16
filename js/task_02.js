@@ -1,24 +1,16 @@
-const isUniq = (element, index, arr) => arr.indexOf(element) === index;
-const isEven = element => element % 2 === 0;
-
-function filterArray(array, cb) {
-  'use strict';
-  const numbers = [];
-  for (let i = 0; i < array.length; i += 1) {
-    const element = array[i];
-    const index = i;
-    // Write code under this line
-    if (cb(element, index, array)) {
-      numbers.push(element);
-    }
+function deliverPizza(pizzaName) {
+    return `Доставляем пиццу ${pizzaName}.`;
   }
-  return numbers;
-}
+  
+  function makePizza(pizzaName) {
+    return `Пицца ${pizzaName} готовится, ожидайте...`;
+  }
+  
+  // Пиши код ниже этой строки
+  function makeMessage(pizzaName, callback) {
+    
+    return callback(pizzaName);
+  }
 
-const arr = [1, 2, 3, 4, 5, 1, 2, 5];
-
-//console.log(filterArray(arr, isUniq));
-// [1, 2, 3, 4, 5]
-
-//console.log(filterArray(arr, isEven));
-// [2, 4, 2]
+console.log(makeMessage('Роял гранд', makePizza));
+console.log(makeMessage('Ультрасыр', deliverPizza));
